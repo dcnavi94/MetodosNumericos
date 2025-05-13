@@ -1,0 +1,13 @@
+instalar phyton 
+
+inicializar o descargar el git 
+git init 
+
+git clone url
+generar el el venv 
+python -m venv venv
+venv/Scripts/activate
+
+
+instalar librerias 
+pip install -r requirements.txt
