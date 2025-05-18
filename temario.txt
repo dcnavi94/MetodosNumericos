@@ -10,59 +10,59 @@ Unidad 1: Fundamentos de los Métodos Numéricos
 Unidad 2: Solución Numérica de Ecuaciones No Lineales
 Método de bisección
 
-Método de falsa posición
+    Método de falsa posición
 
-Método de Newton-Raphson
+    Método de Newton-Raphson
 
-Método de la secante
+    Método de la secante
 
-Análisis de convergencia y error
+    Análisis de convergencia y error
 
 Unidad 3: Sistemas de Ecuaciones Lineales
 Eliminación de Gauss
 
-Eliminación de Gauss-Jordan
+    Eliminación de Gauss-Jordan
 
-Factorización LU
+    Factorización LU
 
-Métodos iterativos: Jacobi y Gauss-Seidel
+    Métodos iterativos: Jacobi y Gauss-Seidel
 
-Normas y condición de matrices
+    Normas y condición de matrices
 
 Unidad 4: Interpolación y Ajuste de Curvas
 Interpolación de Lagrange
 
-Interpolación de Newton
+    Interpolación de Newton
 
-Interpolación spline
+    Interpolación spline
 
-Regresión lineal y polinómica
+    Regresión lineal y polinómica
 
-Mínimos cuadrados
+    Mínimos cuadrados
 
 Unidad 5: Derivación e Integración Numérica
 Derivación numérica: diferencias finitas progresivas, regresivas y centradas
 
-Integración numérica:
+    Integración numérica:
 
-Regla del trapecio
+    Regla del trapecio
 
-Regla de Simpson 1/3 y 3/8
+    Regla de Simpson 1/3 y 3/8
 
-Cuadratura compuesta
+    Cuadratura compuesta
 
 Unidad 6: Solución Numérica de Ecuaciones Diferenciales Ordinarias (EDO)
 Método de Euler
 
-Método de Euler mejorado (Heun)
+    Método de Euler mejorado (Heun)
 
-Método de Runge-Kutta de 2do y 4to orden
+    Método de Runge-Kutta de 2do y 4to orden
 
-Sistemas de EDO
+    Sistemas de EDO
 
 Unidad 7: Aplicaciones Computacionales
-Implementación de algoritmos en Python, MATLAB o Excel
+    Implementación de algoritmos en Python, MATLAB o Excel
 
-Uso de software especializado para la solución de problemas numéricos
+    Uso de software especializado para la solución de problemas numéricos
 
-Análisis de resultados y validación con soluciones analíticas
+    Análisis de resultados y validación con soluciones analíticas
