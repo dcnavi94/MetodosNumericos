@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Error de Propagación en Métodos Numéricos</title>
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <!-- KaTeX JS + Auto-render extension -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #34495e;
+      margin-top: 1.2em;
+    }
+    p {
+      margin-bottom: 12px;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Error de Propagación en Métodos Numéricos</h1>
+
+  <p>El <strong>error de propagación</strong> se refiere al fenómeno en el que pequeños errores iniciales o intermedios en cálculos numéricos se acumulan y se amplifican, afectando significativamente el resultado final.</p>
+
+  <h2>Causas del Error de Propagación</h2>
+  <ul>
+    <li><strong>Errores iniciales:</strong> mediciones iniciales imprecisas o valores iniciales aproximados.</li>
+    <li><strong>Errores intermedios:</strong> redondeos sucesivos durante cálculos iterativos.</li>
+    <li><strong>Inestabilidad numérica:</strong> algoritmos sensibles a pequeñas variaciones.</li>
+  </ul>
+
+  <h2>Ejemplo Detallado de Propagación de Errores</h2>
+  <p>Consideremos el cálculo iterativo simple:</p>
+
+  <p>$$ x_{n+1} = x_n^2 $$</p>
+
+  <p>Supongamos que partimos de un valor inicial ligeramente incorrecto:</p>
+  <p>Valor verdadero: $$x_0 = 1.1$$; valor aproximado: $$x_0' = 1.1005$$</p>
+
+  <p>Veamos cómo evoluciona el error:</p>
+
+  <ul>
+    <li>Iteración 1:
+      <ul>
+        <li>Valor verdadero: $$x_1 = (1.1)^2 = 1.21$$</li>
+        <li>Valor aproximado: $$x_1' = (1.1005)^2 = 1.21110025$$</li>
+        <li>Error absoluto: $$E_{abs,1} = \lvert 1.21 - 1.21110025 \rvert = 0.00110025$$</li>
+      </ul>
+    </li>
+
+    <li>Iteración 2:
+      <ul>
+        <li>Valor verdadero: $$x_2 = (1.21)^2 = 1.4641$$</li>
+        <li>Valor aproximado: $$x_2' = (1.21110025)^2 \approx 1.4667646$$</li>
+        <li>Error absoluto: $$E_{abs,2} = \lvert 1.4641 - 1.4667646 \rvert = 0.0026646$$ (aumentó significativamente)</li>
+      </ul>
+    </li>
+
+    <li>Iteración 3:
+      <ul>
+        <li>Valor verdadero: $$x_3 = (1.4641)^2 \approx 2.14358881$$</li>
+        <li>Valor aproximado: $$x_3' = (1.4667646)^2 \approx 2.1514024$$</li>
+        <li>Error absoluto: $$E_{abs,3} = \lvert 2.14358881 - 2.1514024 \rvert \approx 0.00781359$$ (aumento dramático)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>Esto ilustra claramente cómo un pequeño error inicial puede amplificarse considerablemente tras sucesivas iteraciones.</p>
+
+  <h2>Estrategias para Controlar la Propagación de Errores</h2>
+  <ul>
+    <li>Utilizar algoritmos numéricamente más estables (por ejemplo, reformular ecuaciones).</li>
+    <li>Usar doble precisión numérica o más para minimizar errores de redondeo.</li>
+    <li>Controlar sistemáticamente los errores en cada iteración, evaluando límites aceptables.</li>
+    <li>Limitar el número de iteraciones donde sea posible.</li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>La propagación de errores es crítica en métodos numéricos iterativos. Comprender sus causas y aplicar medidas de control es esencial para garantizar resultados precisos y confiables.</p>
+</body>
+</html>

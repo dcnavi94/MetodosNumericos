@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cifras Significativas en Métodos Numéricos</title>
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <!-- KaTeX JS + Auto-render extension -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2, h3 {
+      color: #34495e;
+      margin-top: 1.2em;
+    }
+    p {
+      margin-bottom: 12px;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cifras Significativas en Métodos Numéricos</h1>
+
+  <p>Las <strong>cifras significativas</strong> son los dígitos en una medición numérica que tienen significado real en términos de precisión y exactitud.</p>
+
+  <h2>Reglas para determinar cifras significativas</h2>
+  <ul>
+    <li><strong>Dígitos distintos de cero</strong> siempre son significativos.<br> Ejemplo: $$453$$ tiene $$3$$ cifras significativas.</li>
+    <li><strong>Ceros intermedios</strong> son significativos.<br> Ejemplo: $$5.007$$ tiene $$4$$ cifras significativas.</li>
+    <li><strong>Ceros a la izquierda</strong> no son significativos.<br> Ejemplo: $$0.0025$$ tiene $$2$$ cifras significativas.</li>
+    <li><strong>Ceros finales en números decimales</strong> son significativos.<br> Ejemplo: $$4.500$$ tiene $$4$$ cifras significativas.</li>
+    <li><strong>Ceros finales en números enteros</strong> pueden no ser significativos dependiendo del contexto.<br> Ejemplo: $$1500$$ puede tener entre $$2$$ y $$4$$ cifras significativas según la precisión indicada.</li>
+  </ul>
+
+  <h2>Operaciones con Cifras Significativas</h2>
+
+  <h3>Suma y Resta</h3>
+  <p>El resultado debe tener tantas posiciones decimales como la cantidad que tiene menor precisión decimal.</p>
+  <p><em>Ejemplo:</em><br>
+  $$5.67 + 2.1 = 7.77 \rightarrow 7.8 \quad(2.1 tiene sólo una posición decimal)$$</p>
+
+  <h3>Multiplicación y División</h3>
+  <p>El resultado tiene tantas cifras significativas como la cantidad con menor número de cifras significativas.</p>
+  <p><em>Ejemplo:</em><br>
+  $$2.34 \times 1.2 = 2.808 \rightarrow 2.8 \quad(1.2 tiene 2 cifras significativas)$$</p>
+
+  <h2>Error y Cifras Significativas</h2>
+  <p>Las cifras significativas están directamente relacionadas con la precisión en los métodos numéricos:</p>
+
+  <p>Considera un resultado numérico: $$3.14159$$.<br>
+  Si la precisión requerida es hasta 3 cifras significativas, redondeamos a: $$3.14$$.</p>
+
+  <h2>Redondeo de cifras significativas</h2>
+  <ul>
+    <li>Si el dígito a descartar es $$< 5$$, se elimina sin afectar al anterior.</li>
+    <li>Si el dígito a descartar es $$\geq 5$$, se aumenta en $$1$$ al dígito precedente.</li>
+  </ul>
+  <p><em>Ejemplo:</em> Redondea $$3.4567$$ a 3 cifras significativas:<br>
+  Resultado: $$3.46$$ (porque el cuarto dígito es $$6 \geq 5$$).</p>
+
+  <h2>Importancia en Métodos Numéricos</h2>
+  <ul>
+    <li>Previene falsos resultados debido a precisión excesiva o insuficiente.</li>
+    <li>Asegura que el resultado refleje fielmente la precisión del cálculo o medición original.</li>
+    <li>Es crucial en la interpretación adecuada de resultados numéricos.</li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>Las cifras significativas son fundamentales para garantizar la precisión y claridad en cálculos numéricos y científicos. Su correcta aplicación evita confusiones y mejora la calidad y fiabilidad de los resultados obtenidos.</p>
+</body>
+</html>

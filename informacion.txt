@@ -1,21 +1,25 @@
 instalar phyton 
 
-inicializar o descargar el git 
+inicializar Git
     
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/dcnavi94/MetodosNumericos.git
-git push -u origin main
+    git init
+    git add .
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/dcnavi94/MetodosNumericos.git
+    git push -u origin main
 
-git clone url
-generar el el venv 
-python -m venv venv
-venv/Scripts/activate
+Descargar Repositorio Git
 
+    git clone https://github.com/dcnavi94/MetodosNumericos.git
 
+Crear Entorno Virtual
+
+    python -m venv venv
+    venv/Scripts/activate
+    
 instalar librerias 
+
 pip install -r requirements.txt
 
 

@@ -2,3 +2,4 @@ pyqt5
 matplotlib 
 numpy
 sympy
+PyQtWebEngine

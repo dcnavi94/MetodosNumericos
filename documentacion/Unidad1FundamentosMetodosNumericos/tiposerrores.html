@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipos de Errores en Métodos Numéricos</title>
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <!-- KaTeX JS + Auto-render extension -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+      margin-top: 1.2em;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    p {
+      margin: 0 0 10px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tipos de Errores en Métodos Numéricos</h1>
+
+  <p>En los métodos numéricos, la precisión y confiabilidad de los resultados dependen del adecuado manejo de los errores. Estos se clasifican principalmente en tres tipos:</p>
+
+  <h2>1. Error Absoluto</h2>
+  <p>El <strong>error absoluto</strong> mide la diferencia absoluta entre el valor verdadero <code>x<sub>verdadero</sub></code> y el valor aproximado <code>x<sub>aproximado</sub></code>:</p>
+  <p>$$E_{abs} = \lvert x_{\mathrm{verdadero}} - x_{\mathrm{aproximado}}\rvert$$</p>
+  <p><strong>Ejemplo:</strong> Si el valor real es $$\pi = 3.141592$$ y la aproximación es $$3.14$$:</p>
+  <p>$$E_{abs} = \lvert 3.141592 - 3.14\rvert = 0.001592$$</p>
+
+  <h2>2. Error Relativo</h2>
+  <p>El <strong>error relativo</strong> muestra la proporción del error absoluto respecto al valor real:</p>
+  <p>$$E_{rel} = \frac{\lvert x_{\mathrm{verdadero}} - x_{\mathrm{aproximado}}\rvert}{\lvert x_{\mathrm{verdadero}}\rvert}$$</p>
+  <p><strong>Ejemplo:</strong></p>
+  <p>$$E_{rel} = \frac{0.001592}{3.141592} \approx 0.0005065$$  
+     En porcentaje: $$E_{rel\%} \approx 0.05065\%$$</p>
+
+  <h2>3. Tipos de Errores según su origen</h2>
+
+  <h3>a. Error de Redondeo</h3>
+  <p>Ocurre por limitaciones de las computadoras para representar números con infinitas cifras decimales.</p>
+  <p><em>Ejemplo:</em> Representar $$\frac{1}{3} \approx 0.3333$$ en lugar del valor exacto.</p>
+
+  <h3>b. Error de Truncamiento</h3>
+  <p>Surge al truncar una serie infinita o un proceso iterativo después de un número limitado de términos.</p>
+  <p><em>Ejemplo:</em> Aproximación de $$e^x$$ usando los primeros términos de la serie de Taylor:</p>
+  <p>$$e^x = 1 + x + \frac{x^2}{2!} + \cdots + \frac{x^n}{n!} + \cdots$$</p>
+
+  <h3>c. Error de Propagación</h3>
+  <p>Se produce cuando los errores se acumulan en cada paso de un cálculo iterativo.</p>
+  <p><em>Ejemplo:</em> Una pequeña imprecisión inicial puede amplificarse tras múltiples iteraciones, afectando el resultado final.</p>
+
+  <h2>Reducción y Control de Errores</h2>
+  <ul>
+    <li>Usar mayor precisión numérica (<code>float64</code>, doble precisión, etc.).</li>
+    <li>Incrementar iteraciones en métodos aproximados.</li>
+    <li>Utilizar algoritmos numéricamente estables.</li>
+    <li>Controlar errores absolutos y relativos en cada paso.</li>
+  </ul>
+</body>
+</html>

@@ -60,9 +60,3 @@ Método de Euler
 
     Sistemas de EDO
 
-Unidad 7: Aplicaciones Computacionales
-    Implementación de algoritmos en Python, MATLAB o Excel
-
-    Uso de software especializado para la solución de problemas numéricos
-
-    Análisis de resultados y validación con soluciones analíticas

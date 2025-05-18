@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fórmula General para Ecuaciones Cuadráticas</title>
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <!-- KaTeX JS + Auto-render extension -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #34495e;
+      margin-top: 1.2em;
+    }
+    p {
+      margin-bottom: 12px;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fórmula General para Ecuaciones Cuadráticas</h1>
+
+  <p>La <strong>fórmula general</strong> permite encontrar las soluciones (raíces) de cualquier ecuación cuadrática de la forma:</p>
+
+  <p>$$ax^2 + bx + c = 0$$</p>
+
+  <p>donde:</p>
+  <ul>
+    <li>$a$, $b$, y $c$ son constantes reales con $a \neq 0$.</li>
+    <li>$x$ es la variable independiente.</li>
+  </ul>
+
+  <h2>Fórmula General</h2>
+  <p>Las soluciones se obtienen mediante la expresión:</p>
+
+  <p>$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$</p>
+
+  <p>donde el término $b^2 - 4ac$ se denomina <strong>discriminante</strong>.</p>
+
+  <h2>Interpretación del Discriminante</h2>
+  <ul>
+    <li>Si $b^2 - 4ac > 0$: Dos soluciones reales diferentes.</li>
+    <li>Si $b^2 - 4ac = 0$: Una solución real doble.</li>
+    <li>Si $b^2 - 4ac < 0$: Dos soluciones complejas conjugadas.</li>
+  </ul>
+
+  <h2>Ejemplo</h2>
+
+  <p>Resuelve la ecuación cuadrática:</p>
+  <p>$$2x^2 - 4x - 6 = 0$$</p>
+
+  <p>Identifica los coeficientes:</p>
+  <ul>
+    <li>$a = 2$, $b = -4$, $c = -6$</li>
+  </ul>
+
+  <p>Calcula el discriminante:</p>
+
+  <p>$$b^2 - 4ac = (-4)^2 - 4(2)(-6) = 16 + 48 = 64$$</p>
+
+  <p>Como el discriminante es positivo, hay dos soluciones reales:</p>
+
+  <p>
+  $$x = \frac{-(-4) \pm \sqrt{64}}{2 \cdot 2}$$<br>
+  $$x = \frac{4 \pm 8}{4}$$
+  </p>
+
+  <p>Por lo tanto, las soluciones son:</p>
+
+  <ul>
+    <li>$$x = \frac{4 + 8}{4} = \frac{12}{4} = 3$$</li>
+    <li>$$x = \frac{4 - 8}{4} = \frac{-4}{4} = -1$$</li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>La fórmula general es una herramienta esencial en álgebra para resolver ecuaciones cuadráticas, proporcionando soluciones claras y directas según las características del discriminante.</p>
+</body>
+</html>
