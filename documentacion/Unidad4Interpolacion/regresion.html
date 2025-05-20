@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Regresión Lineal y Polinómica</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Regresión Lineal y Polinómica</h1>
+
+  <p>La regresión es una técnica estadística para modelar la relación entre una variable dependiente y una o más variables independientes. Se utiliza para predecir valores, identificar tendencias y analizar datos experimentales.</p>
+
+  <h2>Regresión Lineal</h2>
+  <p>El modelo de regresión lineal simple tiene la forma:</p>
+  <p>$$y = a_0 + a_1x$$</p>
+  <p>Donde:</p>
+  <ul>
+    <li>$y$ es la variable dependiente</li>
+    <li>$x$ es la variable independiente</li>
+    <li>$a_0$ es la ordenada al origen (intersección en y)</li>
+    <li>$a_1$ es la pendiente de la recta</li>
+  </ul>
+
+  <h2>Regresión Polinómica</h2>
+  <p>Cuando los datos no siguen una tendencia lineal, se puede usar un polinomio de grado $n$:</p>
+  <p>$$y = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$$</p>
+  <p>Este modelo permite ajustar curvas más complejas a los datos experimentales.</p>
+
+  <h2>Coeficiente de Determinación ($R^2$)</h2>
+  <p>Se usa para evaluar la calidad del ajuste:</p>
+  <p>$$R^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}$$</p>
+  <p>Cuanto más cercano a 1, mejor es el ajuste.</p>
+
+  <h2>Ejemplo</h2>
+  <p>Dado el conjunto de datos:</p>
+  <ul>
+    <li>$x = [1, 2, 3, 4]$</li>
+    <li>$y = [2.2, 2.8, 3.6, 4.5]$</li>
+  </ul>
+  <p>Podemos ajustar un modelo lineal o cuadrático. El modelo cuadrático podría ser:</p>
+  <p>$$y = 1.1 + 0.5x + 0.2x^2$$</p>
+
+  <h2>Aplicaciones</h2>
+  <ul>
+    <li>Predicción de fenómenos físicos, biológicos y económicos.</li>
+    <li>Análisis de tendencias y patrones.</li>
+    <li>Ajuste de curvas en simulaciones numéricas.</li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>La regresión, tanto lineal como polinómica, es una herramienta esencial para modelar y analizar datos reales. Su implementación computacional permite automatizar análisis y tomar decisiones informadas en ingeniería, ciencia y economía.</p>
+</body>
+</html>

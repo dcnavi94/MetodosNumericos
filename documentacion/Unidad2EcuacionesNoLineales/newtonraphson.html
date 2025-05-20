@@ -1,8 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="utf-8"><title>NewtonRaphson</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Método de Newton-Raphson</title>
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <!-- KaTeX JS + Auto-render extension -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #34495e;
+      margin-top: 1.2em;
+    }
+    p {
+      margin-bottom: 12px;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
 <body>
-  <h1>NewtonRaphson</h1>
-  <p>Descripción del método...</p>
+  <h1>Método de Newton-Raphson</h1>
+
+  <p>El <strong>método de Newton-Raphson</strong> es una técnica iterativa muy utilizada para encontrar raíces de funciones continuas y diferenciables.</p>
+
+  <h2>Descripción del método</h2>
+
+  <p>La fórmula iterativa del método de Newton-Raphson es:</p>
+
+  <p>$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$</p>
+
+  <p>donde:</p>
+  <ul>
+    <li>$x_n$ es la aproximación actual a la raíz.</li>
+    <li>$f(x_n)$ es la evaluación de la función en $x_n$.</li>
+    <li>$f'(x_n)$ es la evaluación de la derivada de la función en $x_n$.</li>
+  </ul>
+
+  <h2>Procedimiento</h2>
+  <ol>
+    <li>Elige una estimación inicial $x_0$.</li>
+    <li>Calcula el siguiente valor usando la fórmula iterativa:</li>
+    <p>$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$</p>
+    <li>Repite hasta alcanzar un criterio de convergencia (por ejemplo, que el cambio entre iteraciones sea suficientemente pequeño).</li>
+  </ol>
+
+  <h2>Ejemplo Práctico</h2>
+
+  <p>Encontrar la raíz de la ecuación:</p>
+  <p>$$f(x) = x^2 - 2$$</p>
+
+  <p>Derivada:</p>
+  <p>$$f'(x) = 2x$$</p>
+
+  <p>Supongamos una estimación inicial: $x_0 = 1$.</p>
+
+  <p>Primera iteración:</p>
+  <ul>
+    <li>$f(1) = 1^2 - 2 = -1$</li>
+    <li>$f'(1) = 2 \cdot 1 = 2$</li>
+    <li>$x_1 = 1 - \frac{-1}{2} = 1 + 0.5 = 1.5$</li>
+  </ul>
+
+  <p>Segunda iteración:</p>
+  <ul>
+    <li>$f(1.5) = (1.5)^2 - 2 = 0.25$</li>
+    <li>$f'(1.5) = 2 \cdot 1.5 = 3$</li>
+    <li>$x_2 = 1.5 - \frac{0.25}{3} \approx 1.4167$</li>
+  </ul>
+
+  <p>Continuamos iterando hasta lograr la precisión deseada. Rápidamente obtenemos una aproximación de $$\sqrt{2}$$.</p>
+
+  <h2>Ventajas y Desventajas</h2>
+
+  <ul>
+    <li><strong>Ventajas:</strong>
+      <ul>
+        <li>Convergencia rápida si la estimación inicial está cerca de la raíz.</li>
+        <li>Sencillo y eficiente.</li>
+      </ul>
+    </li>
+    <li><strong>Desventajas:</strong>
+      <ul>
+        <li>Necesita derivadas analíticas o numéricas precisas.</li>
+        <li>Puede divergir si la estimación inicial está lejos o si la derivada es cercana a cero.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>El método de Newton-Raphson es ampliamente usado debido a su rapidez y eficiencia, pero requiere cuidado al elegir el punto inicial y asegurar que la función sea adecuadamente diferenciable.</p>
 </body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Regla del Trapecio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Regla del Trapecio</h1>
+
+  <p>La regla del trapecio es un método de integración numérica que aproxima el área bajo una curva mediante un trapecio. Es útil cuando se conoce el valor de la función en los extremos del intervalo, pero no se puede integrar de manera analítica.</p>
+
+  <h2>Fórmula</h2>
+  <p>Para una función continua $f(x)$ definida en el intervalo $[a, b]$:</p>
+  <p>
+    $$
+    \int_a^b f(x)\,dx \approx \frac{b - a}{2}\left[f(a) + f(b)\right]
+    $$
+  </p>
+
+  <h2>Versión Compuesta</h2>
+  <p>Dividiendo el intervalo $[a, b]$ en $n$ subintervalos de igual longitud $h$:</p>
+  <p>
+    $$
+    h = \frac{b - a}{n},\quad x_i = a + ih,\quad i = 0,1,...,n
+    $$
+    $$
+    \int_a^b f(x)\,dx \approx \frac{h}{2}\left[f(x_0) + 2\sum_{i=1}^{n-1} f(x_i) + f(x_n)\right]
+    $$
+  </p>
+
+  <h2>Ejemplo</h2>
+  <p>Calcular la integral de $f(x) = \sin(x)$ en $[0, \pi]$:</p>
+  <p>
+    $$
+    \int_0^\pi \sin(x)dx \approx \frac{\pi - 0}{2}(\sin(0) + \sin(\pi)) = 0
+    $$
+    <br>
+    Si se usa la versión compuesta con $n=4$, se obtiene una mejor aproximación.
+  </p>
+
+  <h2>Ventajas</h2>
+  <ul>
+    <li>Sencillo de implementar.</li>
+    <li>Puede usarse con pocos puntos.</li>
+    <li>Mejora la precisión al aumentar el número de subintervalos.</li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>La regla del trapecio es una técnica básica y efectiva para aproximar integrales definidas. Aunque es menos precisa que métodos como Simpson, sigue siendo útil en muchos contextos numéricos.</p>
+</body>
+</html>

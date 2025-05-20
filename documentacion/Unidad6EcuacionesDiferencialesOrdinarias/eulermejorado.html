@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Método de Euler</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Método de Euler</h1>
+
+  <p>El método de Euler es una técnica numérica para aproximar soluciones de ecuaciones diferenciales ordinarias (EDO) de primer orden. Se basa en una discretización de la variable independiente y una estimación de la pendiente de la función.</p>
+
+  <h2>Fórmula</h2>
+  <p>Dada una EDO de la forma:</p>
+  <p>$$
+  \frac{dy}{dx} = f(x, y),\quad y(x_0) = y_0
+  $$</p>
+  <p>El método de Euler aproxima el valor de $y$ en el siguiente punto usando:</p>
+  <p>$$
+  y_{n+1} = y_n + h \cdot f(x_n, y_n)
+  $$</p>
+  <p>donde $h$ es el tamaño del paso.</p>
+
+  <h2>Algoritmo</h2>
+  <ol>
+    <li>Elegir el punto inicial $(x_0, y_0)$</li>
+    <li>Elegir el tamaño de paso $h$</li>
+    <li>Aplicar la fórmula de Euler de forma iterativa hasta alcanzar el valor deseado de $x$</li>
+  </ol>
+
+  <h2>Ejemplo</h2>
+  <p>Resolver $\frac{dy}{dx} = x + y$ con $y(0) = 1$ y $h = 0.1$ hasta $x = 0.5$:</p>
+  <p>
+    $$
+    y_1 = 1 + 0.1(0 + 1) = 1.1\\
+    y_2 = 1.1 + 0.1(0.1 + 1.1) = 1.22\\
+    \text{y así sucesivamente...}
+    $$
+  </p>
+
+  <h2>Ventajas</h2>
+  <ul>
+    <li>Fácil de implementar</li>
+    <li>Aproximación rápida en problemas sencillos</li>
+  </ul>
+
+  <h2>Desventajas</h2>
+  <ul>
+    <li>Poca precisión comparado con métodos de orden superior</li>
+    <li>Error acumulativo considerable con pasos grandes</li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>El método de Euler es útil como introducción a los métodos numéricos para EDO y como base para métodos más precisos como el de Euler modificado o Runge-Kutta.</p>
+</body>
+</html>

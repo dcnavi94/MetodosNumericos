@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Interpolación Spline Cúbica</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interpolación Spline Cúbica</h1>
+  <p>La interpolación spline cúbica es una técnica usada para aproximar funciones mediante polinomios de tercer grado que pasan por un conjunto de puntos dados. A diferencia de otros métodos, el spline cúbico garantiza continuidad en la primera y segunda derivada, lo que da como resultado una curva suave.</p>
+
+  <h2>Definición</h2>
+  <p>Para un conjunto de puntos \((x_0, y_0), (x_1, y_1), \dots, (x_n, y_n)\), se construyen polinomios cúbicos \(S_i(x)\) en cada intervalo \([x_i, x_{i+1}]\) tales que:</p>
+  <ul>
+    <li>\(S_i(x_i) = y_i\)</li>
+    <li>\(S_i(x_{i+1}) = y_{i+1}\)</li>
+    <li>\(S_i'(x_{i+1}) = S_{i+1}'(x_{i+1})\)</li>
+    <li>\(S_i''(x_{i+1}) = S_{i+1}''(x_{i+1})\)</li>
+  </ul>
+
+  <h2>Forma del Polinomio</h2>
+  <p>Cada spline cúbico tiene la forma:</p>
+  <p>
+    $$
+    S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3
+    $$
+  </p>
+
+  <h2>Condiciones Adicionales</h2>
+  <p>Se imponen condiciones adicionales para obtener una solución única:</p>
+  <ul>
+    <li><strong>Spline natural:</strong> \(S''(x_0) = S''(x_n) = 0\)</li>
+    <li><strong>Spline clamped:</strong> Se especifican \(S'(x_0)\) y \(S'(x_n)\)</li>
+  </ul>
+
+  <h2>Ventajas</h2>
+  <ul>
+    <li>Curvas suaves con derivadas continuas.</li>
+    <li>Buena aproximación incluso con pocos puntos.</li>
+    <li>Útil para gráficos, animación, CAD y ajuste de datos.</li>
+  </ul>
+
+  <h2>Ejemplo</h2>
+  <p>Dados los puntos:</p>
+  <ul>
+    <li>\((0, 0), (1, 1), (2, 0)\)</li>
+  </ul>
+  <p>Se construyen dos splines cúbicos en los intervalos \([0,1]\) y \([1,2]\) que cumplen las condiciones de continuidad y derivadas. El sistema resultante se resuelve para obtener los coeficientes \(a_i, b_i, c_i, d_i\).</p>
+
+  <h2>Conclusión</h2>
+  <p>Los splines cúbicos son una herramienta poderosa en interpolación numérica cuando se requiere suavidad y precisión entre puntos. Su implementación computacional es eficiente y ampliamente usada en aplicaciones técnicas y científicas.</p>
+</body>
+</html>

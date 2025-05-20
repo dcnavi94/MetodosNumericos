@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Método de Runge-Kutta</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Método de Runge-Kutta</h1>
+
+  <p>El método de Runge-Kutta es una familia de métodos iterativos para resolver ecuaciones diferenciales ordinarias (EDO). Su versión más conocida es el método de cuarto orden (RK4), que ofrece una excelente precisión con un costo computacional moderado.</p>
+
+  <h2>Fórmula del Método RK4</h2>
+  <p>Para resolver la EDO:</p>
+  <p>
+    $$\frac{dy}{dx} = f(x, y), \quad y(x_0) = y_0$$
+  </p>
+  <p>El método RK4 utiliza:</p>
+  <p>
+    $$
+    \begin{aligned}
+    k_1 &= f(x_n, y_n) \\
+    k_2 &= f\left(x_n + \frac{h}{2}, y_n + \frac{h}{2}k_1\right) \\
+    k_3 &= f\left(x_n + \frac{h}{2}, y_n + \frac{h}{2}k_2\right) \\
+    k_4 &= f(x_n + h, y_n + hk_3) \\
+    y_{n+1} &= y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)
+    \end{aligned}
+    $$
+  </p>
+
+  <h2>Ejemplo</h2>
+  <p>Resolver $\frac{dy}{dx} = x + y$ con $y(0) = 1$ y $h = 0.1$:</p>
+  <p>
+    $$
+    k_1 = f(0,1) = 1,\quad
+    k_2 = f(0.05,1.05) = 1.1,\quad
+    k_3 = f(0.05,1.055) = 1.105,\quad
+    k_4 = f(0.1,1.1105) = 1.2105
+    $$
+    $$
+    y_1 = 1 + \frac{0.1}{6}(1 + 2(1.1) + 2(1.105) + 1.2105) \approx 1.11034
+    $$
+  </p>
+
+  <h2>Ventajas</h2>
+  <ul>
+    <li>Alta precisión con pocos pasos.</li>
+    <li>Estabilidad numérica adecuada para muchos problemas prácticos.</li>
+    <li>No requiere derivadas adicionales de la función.</li>
+  </ul>
+
+  <h2>Comparación con Euler</h2>
+  <p>El método de Euler es de primer orden, mientras que RK4 es de cuarto orden. Esto significa que RK4 puede alcanzar mayor precisión con menos pasos.</p>
+
+  <h2>Conclusión</h2>
+  <p>Runge-Kutta de cuarto orden es uno de los métodos más usados para resolver EDO en aplicaciones científicas, debido a su balance entre simplicidad y precisión.</p>
+</body>
+</html>

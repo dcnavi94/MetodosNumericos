@@ -1,8 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="utf-8"><title>FactorizacionLU</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Factorización en Álgebra</title>
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <!-- KaTeX JS + Auto-render extension -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2, h3 {
+      color: #34495e;
+      margin-top: 1.2em;
+    }
+    p {
+      margin-bottom: 12px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
 <body>
-  <h1>FactorizacionLU</h1>
-  <p>Descripción del método...</p>
+  <h1>Factorización en Álgebra</h1>
+
+  <p>La <strong>factorización</strong> es el proceso de expresar una expresión algebraica como el producto de factores más simples. Es una herramienta esencial en álgebra para simplificar expresiones, resolver ecuaciones y analizar funciones.</p>
+
+  <h2>Tipos Comunes de Factorización</h2>
+
+  <h3>1. Factor Común</h3>
+  <p>Consiste en extraer el factor común máximo entre los términos.</p>
+
+  <p><strong>Ejemplo:</strong></p>
+  <p>$$6x^2 + 9x = 3x(2x + 3)$$</p>
+
+  <h3>2. Diferencia de Cuadrados</h3>
+  <p>Una diferencia de dos cuadrados se factoriza en el producto de dos binomios conjugados.</p>
+
+  <p><strong>Fórmula:</strong> $$a^2 - b^2 = (a - b)(a + b)$$</p>
+
+  <p><strong>Ejemplo:</strong></p>
+  <p>$$x^2 - 9 = (x - 3)(x + 3)$$</p>
+
+  <h3>3. Trinomio Cuadrado Perfecto</h3>
+  <p>Un trinomio cuadrado perfecto puede factorizarse como el cuadrado de un binomio.</p>
+
+  <p><strong>Fórmula:</strong> $$a^2 + 2ab + b^2 = (a + b)^2$$</p>
+
+  <p><strong>Ejemplo:</strong></p>
+  <p>$$x^2 + 6x + 9 = (x + 3)^2$$</p>
+
+  <h3>4. Trinomios de la forma $x^2 + bx + c$</h3>
+  <p>Se buscan dos números cuya suma sea $b$ y cuyo producto sea $c$.</p>
+
+  <p><strong>Ejemplo:</strong></p>
+  <p>$$x^2 + 5x + 6 = (x + 2)(x + 3)$$ porque $2 + 3 = 5$ y $2 \times 3 = 6$.</p>
+
+  <h3>5. Agrupación de Términos</h3>
+  <p>Se aplica a expresiones con cuatro o más términos, agrupando para extraer factores comunes.</p>
+
+  <p><strong>Ejemplo:</strong></p>
+  <p>$$ax + ay + bx + by = a(x + y) + b(x + y) = (x + y)(a + b)$$</p>
+
+  <h2>Importancia de la Factorización</h2>
+
+  <ul>
+    <li>Simplifica expresiones algebraicas.</li>
+    <li>Facilita la solución de ecuaciones algebraicas.</li>
+    <li>Permite identificar raíces o ceros de funciones.</li>
+    <li>Se utiliza en cálculo y otras áreas avanzadas de matemáticas.</li>
+  </ul>
+
+  <h2>Ejemplo Práctico de Factorización Completa</h2>
+
+  <p>Factoriza completamente la siguiente expresión:</p>
+
+  <p>$$2x^2 - 8$$</p>
+
+  <p><strong>Solución:</strong></p>
+
+  <ul>
+    <li>Extraemos el factor común: $$2(x^2 - 4)$$</li>
+    <li>Factorizamos la diferencia de cuadrados: $$2(x - 2)(x + 2)$$</li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>La factorización es un procedimiento clave en álgebra que facilita la manipulación y solución de expresiones algebraicas complejas, convirtiéndolas en formas más simples y manejables.</p>
 </body>
 </html>

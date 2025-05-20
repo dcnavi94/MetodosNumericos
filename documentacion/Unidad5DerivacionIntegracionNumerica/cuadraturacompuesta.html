@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuadratura Compuesta</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cuadratura Compuesta</h1>
+  <p>La cuadratura compuesta es una técnica numérica que consiste en aplicar reglas de integración en subintervalos de un intervalo dado, con el objetivo de mejorar la precisión del cálculo de integrales definidas.</p>
+
+  <h2>Fórmulas</h2>
+  <h3>Regla del Trapecio Compuesta</h3>
+  <p>Se aplica la regla del trapecio en cada subintervalo:</p>
+  <p>$$
+    \int_a^b f(x)\,dx \approx \frac{h}{2}\left[f(x_0) + 2\sum_{i=1}^{n-1} f(x_i) + f(x_n)\right]
+  $$</p>
+
+  <h3>Regla de Simpson 1/3 Compuesta</h3>
+  <p>Requiere un número par de subintervalos:</p>
+  <p>$$
+    \int_a^b f(x)\,dx \approx \frac{h}{3}\left[f(x_0) + 4\sum_{\text{impares}} f(x_i) + 2\sum_{\text{pares}} f(x_i) + f(x_n)\right]
+  $$</p>
+
+  <h3>Regla de Simpson 3/8 Compuesta</h3>
+  <p>Requiere que el número de subintervalos sea múltiplo de 3:</p>
+  <p>$$
+    \int_a^b f(x)\,dx \approx \frac{3h}{8}\left[f(x_0) + 3\sum_{1 \le i \le n-1, i \not\equiv 0\ (\text{mod } 3)} f(x_i) + 2\sum_{i \equiv 0\ (\text{mod } 3)} f(x_i) + f(x_n)\right]
+  $$</p>
+
+  <h2>Ventajas</h2>
+  <ul>
+    <li>Aumenta la precisión respecto a una sola aplicación de la regla.</li>
+    <li>Flexible en la elección del número de subintervalos.</li>
+    <li>Puede usarse en funciones difíciles de integrar analíticamente.</li>
+  </ul>
+
+  <h2>Ejemplo</h2>
+  <p>Sea $f(x) = \sin(x)$ en $[0, \pi]$, con $n = 4$ subintervalos. Aplicando la regla del trapecio compuesta:</p>
+  <p>$$
+    h = \frac{\pi - 0}{4} = \frac{\pi}{4}
+  $$</p>
+  <p>Se evalúan los puntos $x_0, x_1, ..., x_4$ y se sustituye en la fórmula para obtener una aproximación numérica del área bajo la curva.</p>
+
+  <h2>Conclusión</h2>
+  <p>La cuadratura compuesta es una técnica fundamental en análisis numérico y simulaciones, especialmente útil cuando no se dispone de la forma analítica de una integral o se requiere alta precisión.</p>
+</body>
+</html>

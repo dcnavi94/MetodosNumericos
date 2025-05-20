@@ -1,8 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="utf-8"><title>SecanteConvergencia</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Convergencia del Método de la Secante</title>
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <!-- KaTeX JS + Auto-render extension -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2, h3 {
+      color: #34495e;
+      margin-top: 1.2em;
+    }
+    p {
+      margin-bottom: 12px;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
 <body>
-  <h1>SecanteConvergencia</h1>
-  <p>Descripción del método...</p>
+  <h1>Convergencia del Método de la Secante</h1>
+
+  <p>El método de la secante es un método iterativo para encontrar raíces de ecuaciones no lineales. La velocidad con la que este método converge a una raíz depende principalmente de la función, las aproximaciones iniciales y la naturaleza local alrededor de la raíz.</p>
+
+  <h2>Orden de Convergencia</h2>
+
+  <p>El método de la secante tiene una convergencia superlineal con un orden aproximado de:</p>
+
+  <p>$$\phi = \frac{1 + \sqrt{5}}{2} \approx 1.61803$$</p>
+
+  <p>Esto significa que la secante converge más rápido que el método de bisección (lineal), pero generalmente más lento que Newton-Raphson (convergencia cuadrática).</p>
+
+  <h2>Condiciones para la Convergencia</h2>
+
+  <p>Para asegurar la convergencia del método de la secante, se deben considerar ciertos aspectos:</p>
+
+  <ul>
+    <li>La función $f(x)$ debe ser continua y suficientemente diferenciable cerca de la raíz.</li>
+    <li>Las aproximaciones iniciales deben estar suficientemente cerca de la raíz buscada.</li>
+    <li>La derivada de la función no debe cambiar demasiado rápido cerca de la raíz.</li>
+  </ul>
+
+  <h2>Ejemplo de Convergencia</h2>
+
+  <p>Consideremos la función:</p>
+  <p>$$f(x) = x^3 - x - 1$$</p>
+
+  <p>con raíces reales cerca de 1. Eligiendo aproximaciones iniciales cercanas:</p>
+
+  <ul>
+    <li>$x_0 = 1$, $x_1 = 1.5$</li>
+  </ul>
+
+  <p>Tras sucesivas iteraciones:</p>
+
+  <ul>
+    <li>$x_2 \approx 1.3478$</li>
+    <li>$x_3 \approx 1.3247$</li>
+    <li>$x_4 \approx 1.3247$ (converge rápidamente hacia la raíz)</li>
+  </ul>
+
+  <p>La convergencia rápida evidencia la eficacia del método cuando las condiciones se cumplen.</p>
+
+  <h2>Factores que afectan la Convergencia</h2>
+
+  <ul>
+    <li><strong>Elección inicial:</strong> Malas aproximaciones iniciales pueden causar divergencia o convergencia lenta.</li>
+    <li><strong>Naturaleza de la función:</strong> Funciones altamente no lineales o con derivadas cercanas a cero pueden reducir drásticamente la velocidad de convergencia.</li>
+  </ul>
+
+  <h2>Comparación con otros métodos</h2>
+
+  <ul>
+    <li><strong>Secante vs Bisección:</strong> La secante converge más rápido, aunque no garantiza convergencia en todos los casos.</li>
+    <li><strong>Secante vs Newton-Raphson:</strong> Newton-Raphson converge más rápido, pero requiere el cálculo explícito de derivadas.</li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>El método de la secante ofrece una convergencia superlineal atractiva por su simplicidad y rapidez cuando se eligen adecuadamente las condiciones iniciales y se cumple con las condiciones matemáticas necesarias. Aunque no es tan rápido como Newton-Raphson, su simplicidad en términos de cálculo lo hace altamente útil en muchas aplicaciones numéricas.</p>
 </body>
 </html>

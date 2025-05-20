@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Interpolación de Newton</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interpolación de Newton</h1>
+
+  <p>La interpolación de Newton es un método numérico que permite encontrar un polinomio que pase por un conjunto de puntos dados. Es especialmente útil cuando se añaden nuevos puntos y se desea actualizar fácilmente el polinomio.</p>
+
+  <h2>Fórmula General</h2>
+  <p>El polinomio de Newton de grado $n$ es:</p>
+  <p>
+    $$
+    P_n(x) = f[x_0] + f[x_0,x_1](x - x_0) + f[x_0,x_1,x_2](x - x_0)(x - x_1) + \ldots + f[x_0, \ldots, x_n](x - x_0)\ldots(x - x_{n-1})
+    $$
+  </p>
+
+  <h2>Diferencias Divididas</h2>
+  <p>Las diferencias divididas se calculan recursivamente:</p>
+  <p>
+    $$
+    f[x_i, x_{i+1}] = \frac{f(x_{i+1}) - f(x_i)}{x_{i+1} - x_i}, \quad f[x_i, x_{i+1}, x_{i+2}] = \frac{f[x_{i+1}, x_{i+2}] - f[x_i, x_{i+1}]}{x_{i+2} - x_i}, \text{ etc.}
+    $$
+  </p>
+
+  <h2>Ejemplo</h2>
+  <p>Dados los puntos:</p>
+  <ul>
+    <li>$x_0 = 1$, $f(x_0) = 1$</li>
+    <li>$x_1 = 2$, $f(x_1) = 4$</li>
+    <li>$x_2 = 3$, $f(x_2) = 9$</li>
+  </ul>
+
+  <p>Se obtiene:</p>
+  <p>
+    $$
+    f[x_0, x_1] = \frac{4 - 1}{2 - 1} = 3, \quad
+    f[x_1, x_2] = \frac{9 - 4}{3 - 2} = 5, \quad
+    f[x_0, x_1, x_2] = \frac{5 - 3}{3 - 1} = 1
+    $$
+  </p>
+
+  <p>Entonces:</p>
+  <p>
+    $$
+    P_2(x) = 1 + 3(x - 1) + 1(x - 1)(x - 2)
+    $$
+  </p>
+
+  <h2>Ventajas</h2>
+  <ul>
+    <li>Permite actualizar el polinomio fácilmente cuando se añade un nuevo punto.</li>
+    <li>Evita el cálculo de sistemas de ecuaciones como en otras formas de interpolación.</li>
+  </ul>
+
+  <h2>Aplicaciones</h2>
+  <ul>
+    <li>Ajuste de curvas.</li>
+    <li>Interpolación de datos experimentales.</li>
+    <li>Modelado matemático.</li>
+  </ul>
+</body>
+</html>

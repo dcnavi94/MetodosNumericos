@@ -1,8 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="utf-8"><title>Jacobi</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Método de Jacobi</title>
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <!-- KaTeX JS + Auto-render extension -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2, h3 {
+      color: #34495e;
+      margin-top: 1.2em;
+    }
+    p {
+      margin-bottom: 12px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
 <body>
-  <h1>Jacobi</h1>
-  <p>Descripción del método...</p>
+  <h1>Método de Jacobi</h1>
+
+  <p>El <strong>método de Jacobi</strong> es un método iterativo usado para resolver sistemas lineales de ecuaciones, especialmente útil cuando los sistemas son grandes y difíciles de manejar mediante métodos directos.</p>
+
+  <h2>Descripción del Método</h2>
+
+  <p>Considera un sistema de ecuaciones lineales:</p>
+
+  <p>
+  $$
+  \begin{aligned}
+  a_{11}x_1 + a_{12}x_2 + \dots + a_{1n}x_n &= b_1 \\
+  a_{21}x_1 + a_{22}x_2 + \dots + a_{2n}x_n &= b_2 \\
+  \vdots \quad\quad\quad\quad\quad\quad\quad\quad &= \vdots \\
+  a_{n1}x_1 + a_{n2}x_2 + \dots + a_{nn}x_n &= b_n
+  \end{aligned}
+  $$
+  </p>
+
+  <p>El método de Jacobi expresa cada variable a partir de las otras y actualiza los valores iterativamente usando la fórmula:</p>
+
+  <p>
+  $$
+  x_i^{(k+1)} = \frac{1}{a_{ii}} \left(b_i - \sum_{j \neq i} a_{ij} x_j^{(k)}\right)
+  $$
+  </p>
+
+  <h2>Procedimiento</h2>
+  <ol>
+    <li>Asume valores iniciales para las incógnitas.</li>
+    <li>Utiliza la fórmula iterativa para calcular nuevos valores.</li>
+    <li>Repite hasta alcanzar la precisión deseada.</li>
+  </ol>
+
+  <h2>Ejemplo Práctico</h2>
+
+  <p>Resolver el sistema:</p>
+
+  <p>
+  $$\begin{aligned}
+  10x + 2y &= 12 \\
+  3x + 15y &= 24
+  \end{aligned}$$
+  </p>
+
+  <p>Despejando cada incógnita:</p>
+  <p>
+  $$
+  x = \frac{12 - 2y}{10}, \quad y = \frac{24 - 3x}{15}
+  $$
+  </p>
+
+  <p>Usando aproximaciones iniciales $x^{(0)} = 0$, $y^{(0)} = 0$:</p>
+
+  <ul>
+    <li>$x^{(1)} = \frac{12 - 2(0)}{10} = 1.2$, $y^{(1)} = \frac{24 - 3(0)}{15} = 1.6$</li>
+    <li>$x^{(2)} = \frac{12 - 2(1.6)}{10} = 0.88$, $y^{(2)} = \frac{24 - 3(1.2)}{15} = 1.36$</li>
+    <li>Continúa iterando hasta la convergencia.</li>
+  </ul>
+
+  <h2>Condición de Convergencia</h2>
+
+  <p>El método de Jacobi converge si la matriz es diagonalmente dominante, es decir, para cada fila:</p>
+
+  <p>
+  $$
+  |a_{ii}| > \sum_{j \neq i} |a_{ij}|
+  $$
+  </p>
+
+  <h2>Ventajas y Desventajas</h2>
+
+  <ul>
+    <li><strong>Ventajas:</strong>
+      <ul>
+        <li>Sencillo y fácil de implementar.</li>
+        <li>Muy eficiente para sistemas grandes y dispersos.</li>
+      </ul>
+    </li>
+    <li><strong>Desventajas:</strong>
+      <ul>
+        <li>Puede ser lento en convergencia.</li>
+        <li>Requiere una matriz que cumpla la condición de convergencia.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>El método de Jacobi es útil y efectivo en muchas aplicaciones, especialmente cuando se manejan grandes sistemas lineales, proporcionando soluciones iterativas eficientes bajo ciertas condiciones de convergencia.</p>
 </body>
 </html>

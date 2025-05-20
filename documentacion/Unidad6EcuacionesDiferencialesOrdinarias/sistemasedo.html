@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistemas de Ecuaciones Diferenciales Ordinarias (EDO)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sistemas de Ecuaciones Diferenciales Ordinarias (EDO)</h1>
+
+  <p>Un sistema de EDO es un conjunto de ecuaciones diferenciales que describen la evolución de múltiples variables dependientes con respecto a una sola variable independiente, usualmente el tiempo.</p>
+
+  <h2>Ejemplo de Sistema</h2>
+  <p>Un sistema clásico es el oscilador armónico:</p>
+  <p>
+    $$
+    \begin{cases}
+    y_1' = y_2 \\
+    y_2' = -y_1
+    \end{cases}
+    $$
+  </p>
+  <p>Con condiciones iniciales $y_1(0) = 0$, $y_2(0) = 1$.</p>
+
+  <h2>Solución Numérica</h2>
+  <p>Los métodos de Runge-Kutta pueden extenderse para resolver sistemas de EDO. Por ejemplo, el método RK4 se aplica de forma simultánea a cada ecuación:</p>
+  <p>Para cada variable $y_i$:</p>
+  <p>
+    $$
+    y_i^{n+1} = y_i^n + \frac{h}{6}(k_1^i + 2k_2^i + 2k_3^i + k_4^i)
+    $$
+  </p>
+  <p>donde cada $k_j^i$ depende de la función correspondiente y del valor actual de todas las variables.</p>
+
+  <h2>Ventajas</h2>
+  <ul>
+    <li>Modelan fenómenos físicos, biológicos y económicos.</li>
+    <li>Permiten el análisis dinámico de múltiples variables simultáneamente.</li>
+    <li>Compatibles con métodos numéricos eficientes.</li>
+  </ul>
+
+  <h2>Aplicaciones</h2>
+  <ul>
+    <li>Mecánica clásica: movimiento de partículas.</li>
+    <li>Biología: modelos depredador-presa.</li>
+    <li>Ingeniería: circuitos eléctricos, control de sistemas.</li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>Los sistemas de EDO son esenciales para describir y analizar fenómenos complejos donde múltiples cantidades varían en función del tiempo. Su solución numérica permite simular dinámicas reales con gran precisión.</p>
+</body>
+</html>

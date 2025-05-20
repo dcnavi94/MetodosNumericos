@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Método de Gauss-Seidel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true},{left: '$', right: '$', display: false}]});"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Método de Gauss-Seidel</h1>
+  <p>El método de Gauss-Seidel es un algoritmo iterativo utilizado para resolver sistemas de ecuaciones lineales. Es especialmente útil cuando se trabaja con matrices dispersas o de gran tamaño.</p>
+
+  <h2>Fórmula Iterativa</h2>
+  <p>Para un sistema lineal representado como $Ax = b$, la fórmula para actualizar cada componente $x_i$ es:</p>
+  <p>$$
+  x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1}^{i-1} a_{ij}x_j^{(k+1)} - \sum_{j=i+1}^{n} a_{ij}x_j^{(k)} \right)
+  $$</p>
+
+  <h2>Pasos del Método</h2>
+  <ol>
+    <li>Elegir una estimación inicial $x^{(0)}$.</li>
+    <li>Actualizar cada variable $x_i$ usando la fórmula iterativa.</li>
+    <li>Repetir hasta que el cambio entre iteraciones sea menor que una tolerancia dada.</li>
+  </ol>
+
+  <h2>Ejemplo</h2>
+  <p>Resolver el sistema:</p>
+  <p>
+    \begin{aligned}
+    4x + y + z &= 7 \\
+    x + 3y + z &= -8 \\
+    x + y + 5z &= 6
+    \end{aligned}
+  </p>
+
+  <p>Con una estimación inicial de $x^{(0)} = (0, 0, 0)$, y una tolerancia de $10^{-4}$, el método iterativo nos lleva a una solución aproximada.</p>
+
+  <h2>Ventajas</h2>
+  <ul>
+    <li>No requiere factorización de matrices.</li>
+    <li>Fácil de implementar.</li>
+    <li>Rápido para sistemas grandes y bien condicionados.</li>
+  </ul>
+
+  <h2>Condición de Convergencia</h2>
+  <p>El método converge si la matriz es diagonalmente dominante o si el espectro de la matriz de iteración está dentro del círculo unitario.</p>
+  <p>Una matriz $A$ es diagonalmente dominante si:</p>
+  <p>$$|a_{ii}| > \sum_{j \ne i} |a_{ij}| \quad \text{para todo } i$$</p>
+
+  <h2>Conclusión</h2>
+  <p>Gauss-Seidel es una herramienta poderosa para la resolución numérica de sistemas lineales, especialmente en ingeniería y simulaciones computacionales.</p>
+</body>
+</html>

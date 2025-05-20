@@ -1,8 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="utf-8"><title>Secante</title></head>
+<head>
+  <meta charset="UTF-8">
+  <title>Método de la Secante</title>
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css">
+  <!-- KaTeX JS + Auto-render extension -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    h1, h2 {
+      color: #34495e;
+      margin-top: 1.2em;
+    }
+    p {
+      margin-bottom: 12px;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 3px 5px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
 <body>
-  <h1>Secante</h1>
-  <p>Descripción del método...</p>
+  <h1>Método de la Secante</h1>
+
+  <p>El <strong>método de la secante</strong> es una técnica numérica para encontrar raíces de funciones continuas sin necesidad de calcular derivadas. Es similar al método de Newton-Raphson, pero usa una aproximación de la derivada mediante dos puntos consecutivos.</p>
+
+  <h2>Descripción del método</h2>
+
+  <p>La fórmula iterativa del método de la secante es:</p>
+
+  <p>$$x_{n+1} = x_n - f(x_n) \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}$$</p>
+
+  <p>donde:</p>
+  <ul>
+    <li>$x_n$ y $x_{n-1}$ son las aproximaciones actuales a la raíz.</li>
+    <li>$f(x_n)$ y $f(x_{n-1})$ son las evaluaciones de la función en esos puntos.</li>
+  </ul>
+
+  <h2>Procedimiento</h2>
+  <ol>
+    <li>Elige dos aproximaciones iniciales $x_0$ y $x_1$.</li>
+    <li>Calcula el siguiente valor usando la fórmula iterativa:</li>
+    <p>$$x_{n+1} = x_n - f(x_n) \frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}$$</p>
+    <li>Repite hasta que el cambio entre iteraciones sea menor que una tolerancia deseada.</li>
+  </ol>
+
+  <h2>Ejemplo Práctico</h2>
+
+  <p>Encontrar una raíz de la ecuación:</p>
+  <p>$$f(x) = x^2 - 4$$</p>
+
+  <p>Tomamos dos aproximaciones iniciales: $x_0 = 1$ y $x_1 = 3$.</p>
+
+  <p>Primera iteración:</p>
+  <ul>
+    <li>$f(x_0) = 1^2 - 4 = -3$</li>
+    <li>$f(x_1) = 3^2 - 4 = 5$</li>
+    <li>$$x_2 = 3 - 5\frac{3 - 1}{5 - (-3)} = 3 - 5\frac{2}{8} = 3 - \frac{10}{8} = 1.75$$</li>
+  </ul>
+
+  <p>Segunda iteración:</p>
+  <ul>
+    <li>$f(1.75) = 1.75^2 - 4 = -0.9375$</li>
+    <li>$$x_3 = 1.75 - (-0.9375)\frac{1.75 - 3}{-0.9375 - 5} \approx 1.9474$$</li>
+  </ul>
+
+  <p>Repite hasta alcanzar la precisión deseada.</p>
+
+  <h2>Ventajas y Desventajas</h2>
+
+  <ul>
+    <li><strong>Ventajas:</strong>
+      <ul>
+        <li>No requiere derivadas explícitas.</li>
+        <li>Convergencia relativamente rápida (superior al método de bisección).</li>
+      </ul>
+    </li>
+    <li><strong>Desventajas:</strong>
+      <ul>
+        <li>Puede ser inestable si las aproximaciones iniciales no están cerca de la raíz.</li>
+        <li>La convergencia no está garantizada.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Conclusión</h2>
+  <p>El método de la secante es una alternativa eficiente y sencilla para hallar raíces, especialmente cuando no se dispone fácilmente de derivadas o cuando el método de Newton-Raphson presenta dificultades.</p>
 </body>
 </html>
